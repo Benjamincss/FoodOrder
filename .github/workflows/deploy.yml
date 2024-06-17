@@ -17,9 +17,6 @@ jobs:
         with:
           node-version: '18'  # ajustez selon votre version de Node.js
 
-      - name: Change directory to frontend
-        run: cd frontend
-
       - name: Install dependencies
         run: npm install
         working-directory: ./frontend
