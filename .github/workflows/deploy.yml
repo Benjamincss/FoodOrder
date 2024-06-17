@@ -35,5 +35,5 @@ jobs:
             server: 109.234.166.213
             username: luza5303
             password: ${{ secrets.FTP_PASSWORD }}
-            local_dir: ./dist
+            local_dir: ./frontend/dist
             remote_dir: ./food-order.lestudio4k.com
