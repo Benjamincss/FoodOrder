@@ -28,6 +28,9 @@ jobs:
         run: npm install react-router-dom@5.2.0
         working-directory: ./frontend
 
+      - name: Verify the correct package.json is used
+        run: cat ./frontend/package.json
+
       - name: Build
         run: npm run build  # ou votre commande pour construire le projet
         working-directory: ./frontend
