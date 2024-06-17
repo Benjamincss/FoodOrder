@@ -21,6 +21,7 @@ const Home = () => {
             <Logo></Logo>
 
             <h2 > {randontext} </h2>
+            <h3>text du dev continue </h3>
             <Choice />
 
 
