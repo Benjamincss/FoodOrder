@@ -18,7 +18,7 @@ jobs:
 
 
       - name: GotoFront
-        run: cd frontend
+        run: cd /github/workspace/frontend
 
 
       - name: Install dependencies
