@@ -36,4 +36,4 @@ jobs:
             username: luza5303
             password: ${{ secrets.FTP_PASSWORD }}
             local_dir: ./dist
-            remote_dir: ./food-order.lestudio4K.com
+            remote_dir: ./food-order.lestudio4k.com
