@@ -1,0 +1,33 @@
+name: Deploy to o2switch
+
+on:
+  push:
+    branches:
+      - main  # ou votre branche de production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'  # ajustez selon votre version de Node.js
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build  # ou votre commande pour construire le projet
+
+      - name: Deploy to o2switch
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.O2SWITCH_HOST }}
+          username: ${{ secrets.O2SWITCH_USERNAME }}
+          password: ${{ secrets.O2SWITCH_PASSWORD }}
+          port: 22
+          source: "dist/*"  # ajustez selon le répertoire de sortie de votre build
+          target: "/path/to/your/web/directory"
