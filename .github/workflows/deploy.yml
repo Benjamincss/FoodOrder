@@ -16,18 +16,24 @@ jobs:
         with:
           node-version: '14'  # ajustez selon votre version de Node.js
 
+
+      - name: GotoFront
+        run: cd frontend
+
+
       - name: Install dependencies
         run: npm install
+
+
 
       - name: Build
         run: npm run build  # ou votre commande pour construire le projet
 
       - name: Deploy to o2switch
-        uses: appleboy/scp-action@master
+        uses: anvil-solutions/Fast-FTP-Action@2.1.3
         with:
-          host: ${{ secrets.O2SWITCH_HOST }}
-          username: ${{ secrets.O2SWITCH_USERNAME }}
-          password: ${{ secrets.O2SWITCH_PASSWORD }}
-          port: 22
-          source: "dist/*"  # ajustez selon le répertoire de sortie de votre build
-          target: "/path/to/your/web/directory"
+            server: 109.234.166.213
+            username: luza5303
+            password: ${{ secrets.FTP_PASSWORD }}
+            local_dir: ./dist
+            remote_dir: ./food-order.lestudio4K.com
