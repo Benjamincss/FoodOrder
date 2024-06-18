@@ -30,7 +30,7 @@ jobs:
         working-directory: ./frontend
 
       - name: react-router fix
-        run: npm install react-router-dom@5.2.0
+        run: npm install react-router-dom@6
         working-directory: ./frontend
 
       - name: Verify the correct package.json is used
