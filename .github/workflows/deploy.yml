@@ -21,7 +21,7 @@ jobs:
         run: npm install
         working-directory: ./frontend
 
-      -name: Install react-icons
+      - name: Install react-icons
         run: npm install react-icons/fa
         working-directory: ./frontend
 
