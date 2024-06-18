@@ -22,7 +22,7 @@ jobs:
         working-directory: ./frontend
 
       - name: Install react-icons
-        run: npm install react-icons/fa
+        run: npm install react-icons
         working-directory: ./frontend
 
       - name: react-router fix
