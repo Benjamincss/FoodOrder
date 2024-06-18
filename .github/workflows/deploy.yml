@@ -25,6 +25,10 @@ jobs:
         run: npm install react-icons
         working-directory: ./frontend
 
+      - name: install recharts
+        run:  npm install recharts
+        working-directory: ./frontend
+
       - name: react-router fix
         run: npm install react-router-dom@5.2.0
         working-directory: ./frontend
