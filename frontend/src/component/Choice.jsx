@@ -32,7 +32,6 @@ const Choice = () => {
         try {
             const response = await axios.post('/api/orders', {
                 orderType: type,
-                user_id: 1,
                 status: 'en cours de prepa ',
                 total_amount: 0,
                 name: 'Commande ' + orderCount,

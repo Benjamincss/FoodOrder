@@ -40,10 +40,6 @@ class Order extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class)->withDefault();
-    }
 
 
     public function products()
@@ -55,6 +51,10 @@ class Order extends Model
     }
 
 
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
 
 
 

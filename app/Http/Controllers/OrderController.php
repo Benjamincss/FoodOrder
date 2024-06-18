@@ -55,7 +55,6 @@ class OrderController extends Controller
             'status' => 'required',
             'total_amount' => 'required',
             'orderType' => 'required',
-            'user_id' => 'required',
             'name' => 'required',
 
 
@@ -66,7 +65,6 @@ class OrderController extends Controller
 
         $order->status = $request->status;
         $order->total_amount = $request->total_amount;
-        $order->user_id = $request->user_id;
         $order->name = $request->name;
         $order->delivery_address = $request->   orderType;
         $order->save();

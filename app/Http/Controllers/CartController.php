@@ -102,4 +102,15 @@ class CartController extends Controller
 
         return response()->json(['message' => 'Product removed from cart successfully']);
     }
+
+
+    public function createCart(Request $request)
+    {
+        $cart = new Cart();
+
+        $cart->status = 'active';
+        $cart->save();
+
+        return response()->json(['message' => 'Cart created successfully!', 'cart' => $cart]);
+    }
 }

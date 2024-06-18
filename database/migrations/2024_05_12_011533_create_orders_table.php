@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignIdFor(\App\Models\User::class)->constrained()->nullable();
             $table->string('status');
+            $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained();
             $table->decimal('total_amount', 10, 2);
             $table->unsignedBigInteger('payment_id')->nullable();
             $table->string('delivery_address')->nullable();

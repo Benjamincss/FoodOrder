@@ -25,7 +25,6 @@ class StoreOrderRequest extends FormRequest
 
 
             'name' => ['required', 'string'],
-            'user_id' => ['required', 'integer'],
             'status' => ['required', 'string'],
             'total_amount' => ['required', 'numeric'],
             'payment_id' => ['nullable', 'integer'],

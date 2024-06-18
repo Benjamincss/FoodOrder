@@ -13,6 +13,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
+Route::post('/cart/add/{productId}', [App\Http\Controllers\CartController::class, 'addToCart']);
 
 
 
@@ -26,16 +27,17 @@ Route::put('/order/{order}', [App\Http\Controllers\OrderController::class, 'upda
 Route::get('/product/{product}/options', [App\Http\Controllers\ProductOptionsController::class, 'index']);
 
 
-Route::get('/order', function (Request $request) {
-    $today = Carbon::today('Europe/Paris'); // replace 'Europe/Paris' with your timezone
-    return Order::with('products')  // Charge les produits liés à chaque commande
-    ->where('created_at', '>=', $today)
+Route::get('/order' , function (Request $request) {
+    $today = Carbon::today();
+    return \App\Models\Order::where('created_at', '>=', $today)
         ->whereIn('status', ['en cours de prepa', 'finis'])
+
+
         ->get();
 });
 
 
-Route::post('/orders/{order}/products/', [App\Http\Controllers\CartController::class, 'addToCart']);
+Route::post('/orders/{order}/products', [App\Http\Controllers\CartController::class, 'addToCart']);
 
 
 Route::post('/orders', [App\Http\Controllers\OrderController::class, 'store']);
